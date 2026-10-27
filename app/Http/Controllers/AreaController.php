@@ -11,7 +11,13 @@ class AreaController extends Controller
     {
         return response()->json(Area::all());
     }
-
+    public function show($id) //si se pasa $id se utiliza la comentada
+    {
+        $area = Area::findOrFail($id);
+        // $category = Category::with(['posts.user'])->findOrFail($id);
+        // $category = Category::with(['posts'])->findOrFail($id);
+        return response()->json($area);
+    }
     public function store(Request $request)
     {
         $data = $request->validate(['name' => ['required', 'string', 'max:255']]);

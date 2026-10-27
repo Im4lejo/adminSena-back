@@ -31,9 +31,10 @@ Route::put('apprentices/{id}', [ApprenticeController::class, 'update'])->name('a
 Route::delete('apprentices/{id}', [ApprenticeController::class, 'destroy'])->name('api.v1.apprentices.destroy');
 
 Route::get('areas', [AreaController::class, 'index'])->name('api.v1.areas.index');
+Route::get('areas/{area}', [AreaController::class, 'show'])->name('api.v1.areas.show');
 Route::post('areas', [AreaController::class, 'store'])->name('api.v1.areas.store');
-Route::put('areas/{id}', [AreaController::class, 'update'])->name('api.v1.areas.update');
-Route::delete('areas/{id}', [AreaController::class, 'destroy'])->name('api.v1.areas.destroy');
+Route::put('areas/{area}', [AreaController::class, 'update'])->name('api.v1.areas.update');
+Route::delete('areas/{area}', [AreaController::class, 'destroy'])->name('api.v1.areas.destroy');
 
 Route::get('computers', [ComputerController::class, 'index'])->name('api.v1.computers.index');
 Route::post('computers', [ComputerController::class, 'store'])->name('api.v1.computers.store');
