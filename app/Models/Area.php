@@ -9,7 +9,7 @@ class Area extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', "imagen_url", "imagen_public_id"];
 
     public function teachers(){
         return $this->hasMany('app/Models/Teacher');
